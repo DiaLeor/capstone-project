@@ -88,10 +88,10 @@ rm(dl, ratings, movies, test_index, temp, movielens, removed)
 
 # Data Exploration and Preprocessing --------------------------------------
 
-# Explore the structure of the dataset to understand its columns and their
-# meanings.
+# Explore the structure of the dataset
 str(edx)
 
-# Preprocess the data as needed, which may include handling missing values,
-# removing duplicates, and transforming or encoding categorical variables.
+# Check for duplicate ratings by combining 'userId' and 'movieId' columns
+paste(edx$userId, edx$movieId, sep = "-") %>%
+  duplicated() %>% sum() # No duplicates
 

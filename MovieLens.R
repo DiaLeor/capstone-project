@@ -90,8 +90,12 @@ rm(dl, ratings, movies, test_index, temp, movielens, removed)
 
 # Explore the structure of the dataset
 str(edx)
+head(edx)
+
+# Check for missing values in the dataset
+sum(is.na(edx)) # No NA values found
 
 # Check for duplicate ratings by combining 'userId' and 'movieId' columns
 paste(edx$userId, edx$movieId, sep = "-") %>%
-  duplicated() %>% sum() # No duplicates
+  duplicated() %>% sum() # No duplicates found
 

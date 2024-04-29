@@ -155,7 +155,3 @@ rm(dl, ratings, movies, test_index, temp, movielens, removed)
 
 # If you feel your report was not fairly graded by your peers, you may report
 # it in the discussion forum to ask for staff review of the report.
-
-
-
-

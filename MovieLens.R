@@ -31,6 +31,7 @@ if(!require(caret)) install.packages("caret", repos = "http://cran.us.r-project.
 
 library(tidyverse)
 library(caret)
+library(dplyr)
 
 # MovieLens 10M dataset:
 # https://grouplens.org/datasets/movielens/10m/

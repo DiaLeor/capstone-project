@@ -29,10 +29,12 @@
 if(!require(tidyverse)) install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 if(!require(caret)) install.packages("caret", repos = "http://cran.us.r-project.org")
 if(!require(dplyr)) install.packages("dplyr", repos = "http://cran.us.r-project.org")
+if(!require(ggplot2)) install.packages("ggplot2", repos = "http://cran.us.r-project.org")
 
 library(tidyverse)
 library(caret)
 library(dplyr)
+library(ggplot2)
 
 # MovieLens 10M dataset:
 # https://grouplens.org/datasets/movielens/10m/
@@ -107,4 +109,5 @@ paste(edx$userId, edx$movieId, sep = "-") %>%
 edx <- edx %>% select(userId,movieId,rating,title,genres)
 dim(edx)
 str(edx)
+
 

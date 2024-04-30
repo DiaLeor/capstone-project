@@ -70,7 +70,8 @@ movies <- movies %>%
 movielens <- left_join(ratings, movies, by = "movieId")
 
 # Final hold-out test set will be 10% of MovieLens data
-set.seed(1) # if using R 3.6 or later
+set.seed(1, sample.kind="Rounding") # if using R 3.6 or later
+
 test_index <- createDataPartition(y = movielens$rating, times = 1, p = 0.1, list = FALSE)
 edx <- movielens[-test_index,]
 temp <- movielens[test_index,]
@@ -98,4 +99,10 @@ sum(is.na(edx)) # No NA values found
 # Check for duplicate ratings by combining 'userId' and 'movieId' columns
 paste(edx$userId, edx$movieId, sep = "-") %>%
   duplicated() %>% sum() # No duplicates found
+
+# I don't think the timestamp is relevant to what I'm trying to achieve.
+# So I'm going to remove it from the dataset.
+edx <- edx %>% select(userId,movieId,rating,title,genres)
+dim(edx)
+str(edx)
 
